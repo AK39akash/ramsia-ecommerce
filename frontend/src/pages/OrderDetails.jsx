@@ -17,7 +17,7 @@ const OrderDetails = () => {
   useEffect(() => {
     const fetchOrder = async () => {
       try {
-        const res = await axios.get(`${backendUrl}/api/order/${id}`, {
+        const res = await axios.get(`${backendUrl}/order/${id}`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },

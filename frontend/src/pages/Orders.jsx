@@ -30,7 +30,7 @@ const Orders = () => {
 
       if (!savedToken) return;
 
-      const response = await axios.get(backendUrl + "/api/order/userOrders", {
+      const response = await axios.get(backendUrl + "/order/userOrders", {
         headers: {
           Authorization: `Bearer ${token}`,
         },

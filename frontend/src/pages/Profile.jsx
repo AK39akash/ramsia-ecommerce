@@ -23,7 +23,7 @@ const Profile = () => {
 
   const fetchProfile = async () => {
     try {
-      const response = await axios.get(backendUrl + "/api/user/profile", {
+      const response = await axios.get(backendUrl + "/user/profile", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -65,7 +65,7 @@ const Profile = () => {
 
     try {
       const response = await axios.put(
-        backendUrl + "/api/user/profile",
+        backendUrl + "/user/profile",
         { name, email, phone },
         {
           headers: {

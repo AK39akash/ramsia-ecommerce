@@ -59,7 +59,7 @@ const OrderConfirmation = () => {
 
       if (method === "cod") {
         const response = await axios.post(
-          backendUrl + "/api/order/place",
+          backendUrl + "/order/place",
           orderData,
           { 
             headers: { 
@@ -88,7 +88,7 @@ const OrderConfirmation = () => {
         }
       } else if (method === "stripe") {
         const response = await axios.post(
-          backendUrl + "/api/order/stripe",
+          backendUrl + "/order/stripe",
           orderData,
           { 
             headers: { 
