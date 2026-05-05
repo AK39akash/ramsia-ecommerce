@@ -14,7 +14,7 @@ const UserDetails = () => {
         try {
 
             const res = await axios.get(
-                import.meta.env.VITE_BACKEND_URL + `/api/user/details/${id}`,
+                import.meta.env.VITE_BACKEND_URL + `/user/details/${id}`,
                 {
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem("token")}`

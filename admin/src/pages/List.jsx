@@ -21,7 +21,7 @@ const List = ({token}) => {
     try {
 
       const response = await axios.get(
-        backendUrl + '/api/product/list', 
+        backendUrl + '/product/list', 
         { 
           headers: {
             Authorization: `Bearer ${token}`
@@ -48,7 +48,7 @@ const List = ({token}) => {
     try {
 
       const response = await axios.put(
-        `${backendUrl}/api/product/remove/${id}`, 
+        `${backendUrl}/product/remove/${id}`, 
         {}, 
         {
           headers: {

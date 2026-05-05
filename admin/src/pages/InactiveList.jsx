@@ -9,7 +9,7 @@ const InactiveList = ({ token }) => {
   // FETCH INACTIVE PRODUCTS
   const fetchInactive = async () => {
     try {
-      const response = await axios.get(backendUrl + "/api/product/list-admin", {
+      const response = await axios.get(backendUrl + "/product/list-admin", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -28,7 +28,7 @@ const InactiveList = ({ token }) => {
   const restoreProduct = async (id) => {
     try {
       const response = await axios.put(
-        `${backendUrl}/api/product/restore/${id}`,
+        `${backendUrl}/product/restore/${id}`,
         {},
         {
           headers: {
@@ -54,7 +54,7 @@ const InactiveList = ({ token }) => {
       if (!confirmDelete) return;
 
       const response = await axios.delete(
-        `${backendUrl}/api/product/hard-delete/${id}`,
+        `${backendUrl}/product/hard-delete/${id}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -85,7 +85,7 @@ const InactiveList = ({ token }) => {
         if (!confirmDelete) return;
 
         const response = await axios.delete(
-            backendUrl + "/api/product/delete-inactive",
+            backendUrl + "/product/delete-inactive",
             {
                 headers: {
                     Authorization: `Bearer ${token}`

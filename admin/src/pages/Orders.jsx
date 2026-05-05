@@ -18,7 +18,7 @@ const Orders = ({token}) => {
     try {
 
       const response = await axios.get(
-        backendUrl + '/api/order/list',
+        backendUrl + '/order/list',
         {}, 
         {
           headers: {
@@ -47,7 +47,7 @@ const Orders = ({token}) => {
     try {
 
       const response = await axios.put(
-        backendUrl + '/api/order/status', 
+        backendUrl + '/order/status', 
         {orderId, status: e.target.value}, 
         {
           headers: {
@@ -72,7 +72,7 @@ const Orders = ({token}) => {
     try {
 
       const response = await axios.post(
-        backendUrl + '/api/order/status',
+        backendUrl + '/order/status',
         { orderId, paymentStatus: e.target.value },
         { 
           headers: { 

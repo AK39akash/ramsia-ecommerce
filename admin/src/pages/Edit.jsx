@@ -45,7 +45,7 @@ const Edit = ({ token }) => {
     try {
 
       const res = await axios.get(
-        `${backendUrl}/api/product/single/${id}`
+        `${backendUrl}/product/single/${id}`
       );
 
       if (res.data.success) {
@@ -165,7 +165,7 @@ const Edit = ({ token }) => {
       });
 
       const res = await axios.put(
-        `${backendUrl}/api/product/update/${id}`,
+        `${backendUrl}/product/update/${id}`,
         formData,
         {
           headers: {
