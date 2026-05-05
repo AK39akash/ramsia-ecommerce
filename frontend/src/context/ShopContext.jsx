@@ -69,7 +69,7 @@ const ShopContextProvider = (props) => {
             try {
 
                 await axios.post(
-                    backendUrl + '/api/cart/add', 
+                    backendUrl + '/cart/add', 
                     { productId: itemId, size }, 
                     {
                         headers: {
@@ -134,7 +134,7 @@ const ShopContextProvider = (props) => {
         if (token) {
             try {
                 await axios.put(
-                    backendUrl + '/api/cart/update', 
+                    backendUrl + '/cart/update', 
                     { 
                         productId: itemId, 
                         size, 
@@ -183,7 +183,7 @@ const ShopContextProvider = (props) => {
 
         try {
             
-            const response = await axios.get(backendUrl + '/api/product/list')
+            const response = await axios.get(backendUrl + '/product/list')
 
             if (response.data.success) {
                 setProducts(response.data.products)
@@ -203,7 +203,7 @@ const ShopContextProvider = (props) => {
         try {
 
             const response = await axios.get(
-                backendUrl + '/api/cart/get',
+                backendUrl + '/cart/get',
                 {
                     headers: {
                         Authorization: `Bearer ${token}`
@@ -226,7 +226,7 @@ const ShopContextProvider = (props) => {
 
         try {
             const response = await axios.get(
-                backendUrl + "/api/wishlist/get", 
+                backendUrl + "/wishlist/get", 
                 {
                     headers: {
                         Authorization: `Bearer ${token}` 
@@ -254,7 +254,7 @@ const ShopContextProvider = (props) => {
         try {
 
             const response = await axios.post(
-                backendUrl + "/api/wishlist/add",
+                backendUrl + "/wishlist/add",
                 { productId },
                 { 
                     headers: { 
@@ -281,7 +281,7 @@ const ShopContextProvider = (props) => {
         try {
 
             const response = await axios.delete(
-                backendUrl + "/api/wishlist/remove",
+                backendUrl + "/wishlist/remove",
                 { 
                     headers: { 
                         Authorization: `Bearer ${token}`
