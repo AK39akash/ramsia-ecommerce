@@ -29,7 +29,7 @@ const Cancel = () => {
         try {
             
             await axios.post(
-              backendUrl + "/api/order/cancel",
+              backendUrl + "/order/cancel",
               { orderId },
               { 
                 headers: { 
