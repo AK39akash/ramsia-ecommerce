@@ -370,7 +370,7 @@ const cancelOrder = async (req, res) => {
 
         order.status = "Cancelled";
 
-        if (order.paymentStatus === "pending") {
+        if (order.paymentStatus === "Pending") {
             order.paymentStatus = "failed";
         }
 

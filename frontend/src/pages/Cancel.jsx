@@ -49,6 +49,8 @@ const Cancel = () => {
 
     };
 
+    sessionStorage.removeItem("activeStripeOrder");
+
     cancelOrder();
 
   }, []);

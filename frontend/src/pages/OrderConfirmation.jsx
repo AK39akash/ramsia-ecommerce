@@ -102,11 +102,9 @@ const OrderConfirmation = () => {
           // This prevents the user from hitting "Back" into a payment redirect loop
 
 
-          sessionStorage.setItem("pendingStripeOrder", orderId)
+          sessionStorage.setItem("activeStripeOrder", orderId);
 
-          window.history.replaceState(null, "", "/cart");
-
-          window.location.href = session_url;
+          window.location.replace(session_url);
 
           sessionStorage.removeItem("checkoutAccess");
           sessionStorage.removeItem("checkoutForm");
