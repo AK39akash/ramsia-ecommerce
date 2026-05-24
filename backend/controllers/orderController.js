@@ -128,43 +128,7 @@ const placeOrderStripe = async (req, res) => {
         });
 
 
-        setTimeout(async () => {
-
-            try {
-
-                console.log("Checking for instant expiry:", newOrder._id);
-
-                const order = await orderModel.findById(newOrder._id);
-
-                if (!order || order.paymentStatus !== "Pending") {
-                    console.log("Order already handled, skipping expiry");
-                    return;
-                }
-
-                if (!order.stripeSessionId) return;
-
-                const sessionData = await stripe.checkout.sessions.retrieve(order.stripeSessionId);
-
-                if (sessionData.status === "open") {
-
-                    await stripe.checkout.sessions.expire(order.stripeSessionId);
-
-                    await orderModel.findByIdAndUpdate(order._id, {
-                        paymentStatus: "Failed",
-                        status: "Cancelled"
-                    });
-
-                    console.log("Stripe session expired instantly:", order._id);
-                    
-                } else {
-                    console.log("Session already closed:", order._id);
-                }
-                
-            } catch (error) {
-                console.log("Expire error:", error);
-            }
-            
-        }, 2 * 60 * 1000 );
+        
 
         return res.status(200).json({ 
             success: true, 
