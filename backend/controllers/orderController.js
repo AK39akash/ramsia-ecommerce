@@ -164,7 +164,7 @@ const placeOrderStripe = async (req, res) => {
                 console.log("Expire error:", error);
             }
             
-        },1 * 60 * 1000 );
+        },2 * 60 * 1000 );
 
         return res.status(200).json({ 
             success: true, 
