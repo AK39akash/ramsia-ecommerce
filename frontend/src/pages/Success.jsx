@@ -64,7 +64,6 @@ const Success = () => {
 
   useEffect(() => {
     return () => {
-      sessionStorage.removeItem("activeStripeOrder");
       sessionStorage.removeItem("checkoutCompleted");
     };
   }, []);

@@ -23,42 +23,7 @@ const Cart = () => {
 
   const [cartData, setCartData] = useState([]);
   const [isCartReady, setIsCartReady] = useState(false);
-
-  useEffect(() => {
-
-    const activeOrder = sessionStorage.getItem("activeStripeOrder");
-
-    if (!activeOrder) return;
-
-    const cancelStripeSession = async () => {
-
-      try {
-
-        await axios.post(
-          backendUrl + "/order/cancel",
-          { orderId: activeOrder },
-          {
-            headers: {
-              Authorization: `Bearer ${
-                token || localStorage.getItem("token")
-              }`
-            }
-          }
-        );
-
-        console.log("Stripe session expired");
-        
-      } catch (error) {
-        console.log(error);
-      }
-
-      sessionStorage.removeItem("activeStripeOrder");
-      
-    };
-
-    cancelStripeSession();
-
-  }, []);
+  
 
   useEffect(() => {
     if (products.length > 0) {

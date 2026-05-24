@@ -48,8 +48,7 @@ const Cancel = () => {
         window.location.replace("/cart");
 
     };
-
-    sessionStorage.removeItem("activeStripeOrder");
+    
 
     cancelOrder();
 
