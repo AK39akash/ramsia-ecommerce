@@ -196,7 +196,6 @@ productSchema.pre("findOneAndUpdate", function (next) {
 
 
 // INDEXING FOR PERFORMANCE
-productSchema.index({ slug: 1 });
 productSchema.index({ groupId: 1 });
 productSchema.index({ category: 1, subCategory: 1, price: 1 });
 productSchema.index({ tags: 1 });
